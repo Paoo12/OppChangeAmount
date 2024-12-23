@@ -9,7 +9,7 @@
 define(['N/record', 'N/log'], function (record, log) {
     function fieldChanged(context) {
         try {
-            console.log('test1');
+            //console.log('test1');
             var currentRecord = context.currentRecord;
 
             // Check if the form is "form1"
@@ -20,8 +20,8 @@ define(['N/record', 'N/log'], function (record, log) {
             }
 
             // Get values for Quantity, Rate, and Terms in Months, set condition to trigger only on Terms field change
-            if (context.sublistId == 'item' && context.fieldId == 'custcol_amplify_monthly') {
-                console.log('test2');
+            if ((context.sublistId == 'item' && context.fieldId == 'custcol_amplify_monthly') || (context.sublistId == 'item' && context.fieldId == 'quantity') || (context.sublistId == 'item' && context.fieldId == 'rate')) {
+                //console.log('test2');
                 var quantity = currentRecord.getCurrentSublistValue({
                     sublistId: 'item',
                     fieldId: 'quantity'
